@@ -12,11 +12,10 @@ public class Funcionario {
 
     private String name;
 
-    @Column(unique = true)
-    private int cpf;
+    @Column(unique = true, nullable = false, length = 11)
+    private String cpf;
 
     @Column(unique = true) // Declaro que o campo e-mail será unico, impedindo que dois funcionários tenha dois email iguais
-
     private String email;
 
     private String senha;
@@ -25,7 +24,7 @@ public class Funcionario {
 
     public Funcionario() {}
 
-    public Funcionario(String name, int cpf, String email, String senha, boolean admin) {
+    public Funcionario(String name, String cpf, String email, String senha, boolean admin) {
         this.name = name;
         this.cpf = cpf;
         this.email = email;
@@ -49,11 +48,11 @@ public class Funcionario {
         this.name = name;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
